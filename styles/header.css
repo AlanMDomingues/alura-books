@@ -24,7 +24,7 @@
 }
 
 .container__imagem-hamburguer {
-        padding-left: 4em;
+        padding: 1.4em;
 }
 
 .lista-menu {
@@ -38,7 +38,8 @@
         display: block;
 }
 
-.lista-menu__titulo, .lista-menu__item {
+.lista-menu__titulo,
+.lista-menu__item {
         padding: 1em;
         background-color: var(--branco);
 }
@@ -61,7 +62,7 @@
 }
 
 .container__imagem-logo {
-        padding-left: 3px;
+        padding-left: 8px;
 }
 
 .container__titulo {
@@ -72,10 +73,28 @@
         display: none;
 }
 
+.container__link {
+        display: none;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer {
+        background-image: url("../assets/MenuAberto.svg");
+}
+
+.container__botao:checked ~ .container__rotulo {
+        background: var(--azul-degrade);
+}
+
 @media screen and (min-width: 768px) {
-        .container__titulo, .container__titulo--negrito {
+
+        .container__titulo,
+        .container__titulo--negrito {
                 font-family: var(--fonte-secundario);
                 font-size: 30px;
+        }
+
+        .container__imagem-logo {
+                padding: 1em 0.5em 1em 1em;
         }
 
         .container__titulo {
@@ -86,7 +105,7 @@
         .container__titulo--negrito {
                 font-weight: 700;
         }
-        
+
         .opcoes {
                 display: flex;
                 align-items: center;
@@ -96,30 +115,58 @@
                 padding: 0 1em;
                 text-transform: uppercase;
         }
-        
+
         .opcoes__link {
                 text-decoration: none;
                 color: var(--preto);
         }
 
-        .container__imagem-transparente {
+        .container__imagem-transparente,
+        .cabecalho__menu-hamburguer,
+        .opcoes__botao {
                 display: none;
         }
 
-        .cabecalho__menu-hamburguer {
-                display: none;
-        }
-
-        .container__imagem-logo {
-                padding: 1em;
-        }
-
-        .opcoes__botao:checked ~ .lista-menu {
+        .opcoes__botao:checked~.lista-menu {
                 display: block;
                 width: auto;
         }
 
-        .opcoes__botao {
-                display: none;
+
+        .container__titulo {
+                margin-top: 12px;
+                margin-right: 1em;
+        }
+}
+
+@media screen and (min-width: 1440px) {
+        .container__link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: var(--preto);
+                font-size: 20px;
+                margin: 0 2em;
+        }
+
+        .container__imagem-logo {
+                padding: 1em 0.5em 1em 1em;
+        }
+
+        .container__titulo {
+                margin-top: 12px;
+                margin-right: 1em;
+        }
+
+        .container__imagem--header {
+                padding: 0.5em;
+        }
+
+        .cabecalho {
+                padding: 0 2em;
+        }
+
+        .opcoes {
+                margin-right: auto;
         }
 }
